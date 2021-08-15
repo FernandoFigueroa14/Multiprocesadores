@@ -1,0 +1,37 @@
+// Type or paste assembly code here,
+// or use sample code below
+
+// Addition example
+MOV R1, #2; // Load R1 with constant 2
+MOV R2, #3; // Load R1 with constant 3
+ADD R3, R1, R2; // Adds 2+3, R3 gets result of 5
+// Data memory example
+MOV R0, #99; // Load R0 with constant 99
+MOV 3, R0; // Store R0 (99) to DMEM[3]
+MOV R1, #1; // Load R1 with constant 1
+MOV R2, 3; // Load R2 with DMEM[3] (which is 99)
+ADD R3, R2, R1; // R3 gets result of 100
+// Jump example
+MOV R0, #0; // Running sum
+MOV R1, #1; // Constant 1 for increment
+MOV R2, #0; // Constant 0 for use in later JMPZ
+label1: ADD R0, R0, R1; // Add 1 to R0
+JMPZ R2, label1; // Jump to ADD instruction again
+// Above is an infinite loop
+// R0 should continue to increment
+
+// Addition example
+MOV R12, 200; // Load R1 with constant 2
+MOV R15, #3; // Load R1 with constant 3
+ADD R6, R7, R10; // Adds 2+3, R3 gets result of 5
+// Data memory example
+MOV R0, #99; // Load R0 with constant 99
+MOV 255, R14; // Store R0 (99) to DMEM[3]
+MOV R9, #133; // Load R1 with constant 1
+MOV R8, 36; // Load R2 with DMEM[3] (which is 99)
+ADD R11, R10, R4; // R3 gets result of 100
+// Jump example
+label1: ADD R10, R10, R11; // Add 1 to R0
+JMPZ R12, label1; // Jump to ADD instruction again
+// Above is an infinite loop
+// R0 should continue to increment
